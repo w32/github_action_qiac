@@ -9,7 +9,8 @@ RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
 RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip setuptools
 RUN apk add --no-cache --virtual .pynacl_deps build-base python3-dev libffi-dev
-RUN pip3 install --no-build-isolation Qualys-IaC-Security
+RUN pip3 install "cython<3.0.0" wheel && pip install pyyaml==5.4.1 --no-build-isolation
+RUN pip3 install Qualys-IaC-Security
 RUN apk add git
 
 RUN ["chmod", "+x", "/entrypoint.sh"]
