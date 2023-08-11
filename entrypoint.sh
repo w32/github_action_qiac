@@ -63,7 +63,7 @@ fi
  echo " "
  echo "SCAN RESULT"
  cd /
- #cat result.json
+ cat result.json
  python resultParser.py result.json
 
 
