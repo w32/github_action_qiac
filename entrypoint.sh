@@ -60,11 +60,12 @@ fi
 
  echo "Scanning Completed at - $(date +"%Y-%m-%d %H:%M:%S")"
  #process result for annotation
+ echo "SARIF RESULT"
+ cat response.sarif
  echo " "
  echo "SCAN RESULT"
  cd /
  sed -i 's/filePath\"\: \"\//filePath\"\: "/g' result.json
- cat response.sarif
  python resultParser.py result.json
 
 
