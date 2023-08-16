@@ -61,7 +61,7 @@ fi
  echo "Scanning Completed at - $(date +"%Y-%m-%d %H:%M:%S")"
  #process result for annotation
  echo "SARIF RESULT"
- sed -i 's/uri\"\: \"\//uri\"\: "/g' result.sarif
+ sed -i 's/uri\"\: \"\//uri\"\: "/g' response.sarif
  echo " "
  echo "SCAN RESULT"
  cd /
