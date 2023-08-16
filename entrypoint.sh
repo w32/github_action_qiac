@@ -64,6 +64,7 @@ fi
  echo "SCAN RESULT"
  cd /
  sed -i 's/filePath\"\: \"\//filePath\"\: "/g' result.json
+ cat response.sarif
  python resultParser.py result.json
 
 
