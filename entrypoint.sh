@@ -3,7 +3,6 @@
 SCANFOLDER=$1
 SOURCE_UUID="8c0ac08e-60ad-4a8a-9571-a2c56514b61a"
 SCANID_STR="Scan launched successfully. Scan ID: "
-POLICY_NAME="Upwork IaC Policy"
 
 git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
@@ -33,7 +32,7 @@ else
 fi
  #Calling Iac CLI
  echo "Scanning Started at - $(date +"%Y-%m-%d %H:%M:%S")"
- qiac scan -a $URL -u $UNAME -p $PASS -d $SCANFOLDER -m json -n GitHubActionScan --policy_name '$POLICY_NAME' --branch $GITHUB_REF --gitrepo $GITHUB_REPOSITORY --source $SOURCE_UUID > /result.json
+ qiac scan -a $URL -u $UNAME -p $PASS -d $SCANFOLDER -m json -n GitHubActionScan --policy_name "Upwork IaC Policy" --branch $GITHUB_REF --gitrepo $GITHUB_REPOSITORY --source $SOURCE_UUID > /result.json
  if [ $? -ne 0 ]; then
     exit 1
  fi
